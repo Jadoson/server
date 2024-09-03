@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@invictus.codes/nuxt-vuetify'],
+  modules: ['@invictus.codes/nuxt-vuetify', '@pinia/nuxt'],
+
   vuetify: {
     moduleOptions: {
       treeshaking: true,
@@ -11,4 +12,9 @@ export default defineNuxtConfig({
       useVuetifyLabs: true,
     },
   },
+  pinia: {
+    autoImports: ['defineStore', ['defineStore', 'definePiniaStore']],
+  },
+
+  compatibilityDate: '2024-09-03',
 })
